@@ -43,6 +43,104 @@
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Sacramento&amp;display=swap" rel="stylesheet">
+
+<style>/* line animation css - start
+================================================== */
+.deco_wrap {
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.line_wrap {
+  top: 0px;
+  left: 50%;
+  bottom: 0px;
+  width: 80%;
+  z-index: 1000;
+  display: block;
+  position: absolute;
+  transform: translateX(-50%);
+  border-left: 1px solid rgba(0, 0, 0, 0.07);
+}
+.line_wrap:before {
+  width: 1px;
+  left: -1px;
+  content: "";
+  height: 100px;
+  position: absolute;
+  animation: scroll1 15s ease-out infinite;
+  background-image: linear-gradient(0deg, #000000, transparent);
+}
+.line_wrap .line_item {
+  width: 20%;
+  float: left;
+  height: 100%;
+  position: relative;
+  display: inline-block;
+  border-right: 1px solid rgba(0, 0, 0, 0.07);
+}
+.line_wrap .line_item:before {
+  width: 1px;
+  right: -1px;
+  content: "";
+  height: 100px;
+  position: absolute;
+}
+.line_wrap .line_item:nth-child(odd):before {
+  animation: scroll2 15s ease-out infinite;
+  background-image: linear-gradient(0deg, transparent, #000000);
+}
+.line_wrap .line_item:nth-child(even):before {
+  animation: scroll1 15s ease-out infinite;
+  background-image: linear-gradient(0deg, #000000, transparent);
+}
+
+.line_wrap.line_white {
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
+}
+.line_wrap.line_white:before {
+  background-image: linear-gradient(0deg, #ffffff, transparent);
+}
+.line_wrap.line_white .line_item {
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+}
+.line_wrap.line_white .line_item:nth-child(odd):before {
+  background-image: linear-gradient(0deg, transparent, #ffffff);
+}
+.line_wrap.line_white .line_item:nth-child(even):before {
+  background-image: linear-gradient(0deg, #ffffff, transparent);
+}
+
+@keyframes scroll1 {
+  0% {
+    top: 0px;
+    opacity: 1;
+  }
+  50% {
+    top: 50%;
+  }
+  100% {
+    top: 100%;
+    opacity: 0.5;
+  }
+}
+@keyframes scroll2 {
+  0% {
+    opacity: 1;
+    bottom: 0px;
+  }
+  50% {
+    bottom: 50%;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0.5;
+  }
+}
+/* line animation css - end
+================================================== */ </style>
+
 <!-- End Google Fonts -->
 
 <!-- page wrapper -->
@@ -271,6 +369,16 @@
 
 <!-- Banner Section -->
 <section class="banner-section">
+
+    <div class="line_wrap line_white">
+					<div class="line_item"></div>
+					<div class="line_item"></div>
+					<div class="line_item"></div>
+					<div class="line_item"></div>
+					<div class="line_item"></div>
+				</div>
+
+                
     <!-- <div class="vertical-text1"><div data-parallax='{"x": 20}'>UAE Nextware.</div></div> -->
 
     <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
