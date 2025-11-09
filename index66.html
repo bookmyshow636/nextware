@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Floating Feather Animation</title>
+<style>
+/* body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #bde7ff, #fdfdfd);
+} */
+
+/* Feather image base */
+.feather {
+  /* position: absolute; */
+  top: -100px;
+  width: 80px;                /* size of feather */
+  opacity: 0.9;
+  animation: fall linear infinite;
+}
+
+/* The falling animation */
+@keyframes fall {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(-60px) translateY(25vh) rotate(-15deg);
+  }
+  50% {
+    transform: translateX(40px) translateY(50vh) rotate(15deg);
+  }
+  75% {
+    transform: translateX(-20px) translateY(75vh) rotate(-10deg);
+  }
+  100% {
+    transform: translateX(0) translateY(100vh) rotate(0deg);
+    opacity: 0.3;
+  }
+}
+
+/* Add multiple feathers with variation (pseudo-random) */
+.feather:nth-child(1) {
+  left: 20%;
+  animation-duration: 9s;
+  animation-delay: 0s;
+}
+.feather:nth-child(2) {
+  left: 50%;
+  animation-duration: 12s;
+  animation-delay: 2s;
+}
+.feather:nth-child(3) {
+  left: 80%;
+  animation-duration: 10s;
+  animation-delay: 4s;
+}
+.feather:nth-child(4) {
+  left: 35%;
+  animation-duration: 11s;
+  animation-delay: 1s;
+}
+.feather:nth-child(5) {
+  left: 65%;
+  animation-duration: 8s;
+  animation-delay: 3s;
+}
+</style>
+</head>
+<body>
+  <img src="feather.png" class="feather" alt="feather">
+  <img src="feather.png" class="feather" alt="feather">
+  <img src="feather.png" class="feather" alt="feather">
+  <img src="feather.png" class="feather" alt="feather">
+  <img src="feather.png" class="feather" alt="feather">
+</body>
+</html>
